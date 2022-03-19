@@ -4,7 +4,9 @@
 function count (string) {  
     const letterCount = {};
     [...string].forEach(val => letterCount.hasOwnProperty(val) ? letterCount[val] += 1 : letterCount[val] = 1)
+    console.log([...string].reduce((pre, val) => (pre[val] = -~pre[val], pre), {}))
     return letterCount;
+
   }
 
  count('onomatopoeia')
