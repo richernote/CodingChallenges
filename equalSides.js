@@ -12,12 +12,16 @@ function findEvenIndex(arr) {
       return ray.reduce((prev, current) => prev += current)
     }
 
-    for (let i = 1; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
       // left of i
       let left = arr.slice(0, i);
       // right of i
       let right = arr.slice(i + 1);
   
+      if (reduction(arr.slice(1)) === 0) {
+          return 0;
+      }
+
       if (reduction(left) == reduction(right)){ 
         console.log(left, right);
         return i;     
