@@ -32,6 +32,7 @@ function domainName(url){
         
     }
     
+    // return if theres no prefix
     return url.slice(0, dot(url))
 }
 
